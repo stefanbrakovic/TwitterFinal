@@ -26,6 +26,7 @@ public class TwiterPoruka {
 	/**
 	 * 
 	 * @param korisnik mora biti tipa String i predstavlja ime korisnika
+	 * @throws RuntimeException kada nije uneta vredost
 	 */
 	public void setKorisnik(String korisnik) {
 	if (korisnik==null || korisnik.equals(""))
@@ -49,8 +50,10 @@ public class TwiterPoruka {
 	if (poruka==null || poruka.length()>140)
 	throw new RuntimeException(
 	"Poruka mora biti uneta i mora imati najvise 140 znakova");
+	else
 	this.poruka = poruka;
 	}
+	
 	/**
 	 * vraca podatke o koriniku i poruci koju je poslao
 	 */

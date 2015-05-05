@@ -18,7 +18,7 @@ public class Twitter {
 	 * @return Vraca listu svih poruka koje su poslate
 	 */
 			public LinkedList<TwiterPoruka> vratiSvePoruke(){
-			return poruke;
+				return poruke;
 			}
 			/**
 			 * Pravi se nova poruka i puni podacima.
@@ -28,11 +28,11 @@ public class Twitter {
 			 */
 			public void unesi(String korisnik, String poruka) {
 			
-			TwiterPoruka tp = new TwiterPoruka();
-			tp.setKorisnik("korisnik");
-			tp.setPoruka(poruka);
+				TwiterPoruka tp = new TwiterPoruka();
+				tp.setKorisnik(korisnik);
+				tp.setPoruka(poruka);
 			
-			poruke.addLast(tp);
+				poruke.addLast(tp);
 			}
 			
 			/**
@@ -62,8 +62,11 @@ public class Twitter {
 	for (int i = 0; i < poruke.size(); i++)
 	if (poruke.get(i).getPoruka().indexOf(tag)!=-1)
 	if (brojac < maxBroj){
-	rezultat[brojac+1]=poruke.get(i);
-	brojac++;
+		TwiterPoruka tp = new TwiterPoruka();
+		tp.setKorisnik(poruke.get(i).getKorisnik());
+		tp.setPoruka(poruke.get(i).getPoruka());
+		rezultat[brojac]=tp;
+		brojac++;
 	}
 	else break;
 	return rezultat;
